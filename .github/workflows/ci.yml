@@ -26,7 +26,6 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material
-      - run: pip install mkdocs-search-plugin
       - run: pip install mkdocs-minify-plugin
       - run: pip install mkdocs-blog-plugin
       - run: pip install mkdocs-git-revision-date-localized-plugin
