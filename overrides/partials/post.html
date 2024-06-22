@@ -68,7 +68,7 @@
         {{ post.content }}
 
         <!-- Continue reading link -->
-        {% if post.more %}
+        {% if config.plugins["material/blog"].config.post_excerpt_separator in post.post.content %}
         <nav class="md-post__action">
             <a href="{{ post.url | url }}">
                 {{ lang.t("blog.continue") }}

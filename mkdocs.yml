@@ -15,6 +15,9 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
+  features:
+    - search.highlight
+    - search.suggest
 
 # Plugins configuration
 plugins:
