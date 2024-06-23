@@ -1,5 +1,5 @@
 site_name: Blog
-site_description: Blog 
+site_description: Kratapps Blog 
 site_author: Ondrej Kratochvil
 
 # Theme configuration
@@ -16,8 +16,34 @@ theme:
     text: Roboto
     code: Roboto Mono
   features:
+    #  - index.pages
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.footer
+    # - navigation.indexes
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    - navigation.path
+    # - navigation.prune
+    # - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
     - search.highlight
+    - search.share
     - search.suggest
+    - toc.follow
+    #    - toc.integrate
 
 # Plugins configuration
 plugins:
@@ -31,11 +57,19 @@ plugins:
       # You can add more configuration options for the blog plugin as needed
   - git-revision-date-localized
   - git-committers
-
-# Navigation configuration
-nav:
-  - Blog: index.md
     
+# Markdown extensions
+markdown_extensions:
+  - toc
+  - tables
+  - fenced_code
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    
+# Extra
 extra:
   generator: false
   social:
@@ -47,14 +81,12 @@ extra:
 # Extra CSS or JavaScript files
 extra_css:
   - stylesheets/extra.css
-
+  - stylesheets/hljs-kratapps.css
 extra_javascript:
-  - javascripts/extra.js
+  - scripts/highlight.min.js
+  - scripts/highlightConfig.js
+  
+# Navigation configuration
+nav:
+  - Blog: index.md
 
-# Markdown extensions
-markdown_extensions:
-  - toc
-  - tables
-  - fenced_code
-
-# Extra configuration options can be added here
