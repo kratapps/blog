@@ -129,8 +129,9 @@ public class ServiceNowIncident {
 And finally we can deserialize with properly defined types.
 
 ```apex
-public List<ServiceNowIncident> parseResponse(HttpResponse response) {
+public List<ServiceNowIncident> deserializeResponse(HttpResponse response) {
     // Preprocess response data.
+    ServiceNowIncidentPreprocessor preprocessor = new ServiceNowIncidentPreprocessor();
     String incidentJson = preprocessor.process(response.getBody());
     // Deserialize the preprocessed JSON.
     return (List<ServiceNowIncident>) JSON.deserialize(
